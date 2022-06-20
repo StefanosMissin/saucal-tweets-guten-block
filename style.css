@@ -1,0 +1,75 @@
+:root {
+    --saucal-blue: #014a81;
+    --twitter-blue: #55ACEE;
+}
+
+.tweets-title h2 {
+    font-size: 3.5rem;
+    color: var(--twitter-blue);
+    text-align: center;
+    font-weight: 500;
+}
+
+.tweets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 20vw;
+    justify-content: center;
+}
+
+.tweet {
+    border: 2px solid var(--twitter-blue);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.wp-container-7 > :where(:not(.alignleft):not(.alignright)) {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.wp-container-7.entry-content.wp-block-post-content .tweet {
+    width: 20vw;
+    margin-left: 2vw;
+    margin-bottom: 2vw;
+    min-height: 10vw;
+}
+
+.twitter-logo  {
+    width: 30%;
+    text-align: center;
+}
+
+.twitter-logo img {
+    max-width: 80px;
+}
+
+.content {
+    width: 70%;
+}
+
+.user {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.user span {
+    color: var(--saucal-blue);
+    font-weight: bold;
+}
+
+.content .text {
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .tweet {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: space-between;
+        flex-basis: 100%;
+    }
+}

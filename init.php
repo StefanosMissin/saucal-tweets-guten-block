@@ -68,15 +68,45 @@ add_action( 'init', 'saucal_custom_tweet_block_register' );
 
 function saucal_render_posts_block($attributes) {
 
+	$get_url = $attributes['url'].strval($attributes['postLimit']);
+
+	$results = wp_remote_get($get_url);
+	
+	$response = $results['body'];
+	
+	$api_response = json_decode( $response , true );
 
 
+	ob_start();
 
-ob_start();
+	?>
 
+	<div class="tweets-title">
+		<h2>Latest Tweets</h2>
+	</div>
 
-echo '<h1>hello from tweet block</h1>';
+	<div class="tweets">
+		<?php
+		foreach ($api_response as $tweet){
+			?>
+			<div class="tweet">
+				<div class="twitter-logo">
+					<img src="/wordpress/wp-content/plugins/saucal-tweets-guten-block/twitter-logo.png" alt="Twitter Official Logo">
+				</div>
+				<div class="content">
+					<p class="user">User: <span>@<?php echo $tweet['userId'];?></span></p>
+					<p class="text"><?php echo $tweet['title'];?></p>
+				</div>
 
-return ob_get_clean();
+			</div>
+			<?php
+		}
+		?>	
+
+	</div>
+	<?php
+
+	return ob_get_clean();
 	
 }
 
