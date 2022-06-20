@@ -68,6 +68,8 @@ add_action( 'init', 'saucal_custom_tweet_block_register' );
 
 function saucal_render_posts_block($attributes) {
 
+
+
 	$get_url = $attributes['url'].strval($attributes['postLimit']);
 
 	$results = wp_remote_get($get_url);
@@ -91,7 +93,7 @@ function saucal_render_posts_block($attributes) {
 			?>
 			<div class="tweet">
 				<div class="twitter-logo">
-					<img src="/wordpress/wp-content/plugins/saucal-tweets-guten-block/twitter-logo.png" alt="Twitter Official Logo">
+					<img src="<?php echo plugin_dir_url( __FILE__ ) . 'twitter-logo.png'; ?>" alt="Twitter Official Logo">
 				</div>
 				<div class="content">
 					<p class="user">User: <span>@<?php echo $tweet['userId'];?></span></p>
