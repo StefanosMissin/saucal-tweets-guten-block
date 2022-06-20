@@ -53,8 +53,8 @@ function saucal_custom_tweet_block_register() { // phpcs:ignore
 	register_block_type(
 		'saucal/saucal-custom-tweet-block', array(
 			'editor_script' => 'saucal-tweet-custom-block-js',
-			'style'  => 'tweet-block-css',
 			'editor_style'  => 'tweet-block-editor-css',
+			'style'  => 'tweet-block-css',
 			'render_callback' => 'saucal_render_posts_block',
 		)
 	);

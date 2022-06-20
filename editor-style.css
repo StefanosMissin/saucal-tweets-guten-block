@@ -1,0 +1,35 @@
+:root {
+    --saucal-blue: #014a81;
+  }
+
+
+#saucal-tweet-guten-block {
+    border: 2px solid var(--saucal-blue);
+    padding: 15px;
+}
+
+#saucal-tweet-guten-block h2 {
+    margin: 15px 0 30px;
+    color: var(--saucal-blue);
+}
+
+
+.loop-url {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.loop-post-limit {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-block-input {
+    height: 40px;
+    margin: 10px 0;
+    max-width: 400px;
+    border: 2px solid var(--saucal-blue) !important;
+}
+
+
